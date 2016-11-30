@@ -5,25 +5,37 @@
     <title>mars_rover_report</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
     <link href="app/css/style.min.css" rel="stylesheet" />
-    <link href="app/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="app/js/angular-datepicker.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+
     <!-- Modules -->
     <script src="app/js/app.js"></script>
     <!-- Controllers -->
     <script src="app/js/controllers/MainContent.js"></script>
-    <script src="app/js/controllers/chartCtrl.js"></script>
-    <script src="node_modules/chart.js/dist/chart.min.js"></script>
-    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 </head>
 
 <body ng-app="appMain">
     <div class="main" ng-controller="MainContent" id="top">
-        <div class="container_logo">nasa api</div>
-        <a href="#top">
-            <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
-        </a>
-
+        <header>
+            <div class="container_logo">nasa_api_exploration</div>
+            <a href="#top">
+                <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
+            </a>
+        </header>
+        <div class="container_img_bg">
+            <img class="fade" ng-show="apod" src='http://www.cite-espace.com/content/uploads/2016/06/hubble-galaxie-naine.jpg'/>
+            <img class="fade" ng-show="mars" src="http://www.journaldugeek.com/wp-content/blogs.dir/1/files/2014/12/o-MARS-facebook1.jpg"/>
+        </div>
+        <ul class="main_cat">
+            <a ng-mouseenter="apod = true" ng-mouseleave="apod = false" class="apod_link" href="apod.hmtl"><li>astronomy_picture_of_the_day</li></a>
+            <a ng-mouseenter="mars = true" ng-mouseleave="mars = false" class="mars_link" href="mars.html"><li class="mt-1">mars_rover_report</li></a>
+        </ul>
+    
+        <div>
+            <div class="line-h top-line"></div>
+            <div class="line-h bottom-line"></div>
+            <div class="line-v"></div>
+        </div>
     </div>
 </body>
 
