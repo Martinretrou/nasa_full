@@ -22,20 +22,25 @@
                 <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
             </a>
         </header>
-        <div class="container_img_bg">
-            <img class="fade" ng-show="apod" src='http://www.cite-espace.com/content/uploads/2016/06/hubble-galaxie-naine.jpg'/>
-            <img class="fade" ng-show="mars" src="http://www.journaldugeek.com/wp-content/blogs.dir/1/files/2014/12/o-MARS-facebook1.jpg"/>
+        <div class="grid_link">
+            <div class="grid_content">
+                <a class="apod_link hvr-underline-from-center" href="apod.html">astronomy_picture_of_the_day</a>
+            </div>
+            <div class="grid_content">
+                <a class="mars_link hvr-underline-from-center" href="mars.html">mars_rover_report</a>
+            </div>
         </div>
-        <ul class="main_cat">
-            <a ng-mouseenter="apod = true" ng-mouseleave="apod = false" class="apod_link" href="apod.hmtl"><li>astronomy_picture_of_the_day</li></a>
-            <a ng-mouseenter="mars = true" ng-mouseleave="mars = false" class="mars_link" href="mars.html"><li class="mt-1">mars_rover_report</li></a>
-        </ul>
-    
-        <div>
-            <div class="line-h top-line"></div>
-            <div class="line-h bottom-line"></div>
-            <div class="line-v"></div>
+        <div class="gradient_fade"></div>
+        <div class="grid">
+            <div class="grid_content">
+                <img src='app/img/apod.jpg'/>
+            </div>
+            <div class="grid_content">    
+                <img src="app/img/mars.jpg"/>
+            </div>
         </div>
+        <p ng-mouseenter="info = true" ng-mouseleave="info = false" class="info_trigger">More infos</p>
+        <p class="info_text" ng-show="info">This project is an exploration of NASA's different API. It's also alearning exercice to try and learn on how to use an API and to extract the data.</p>
     </div>
 </body>
 

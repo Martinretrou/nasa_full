@@ -1,3 +1,6 @@
+* {
+  transition: all 150ms ease-in; }
+
 body {
   margin: 0;
   background-color: #FFF; }
@@ -38,10 +41,9 @@ p {
 header {
   position: absolute;
   z-index: 3;
-  background-color: #FFF;
   width: 100%;
-  height: 16vh;
-  border-bottom: 2px solid #000; }
+  background-color: #000;
+  height: 16vh; }
 
 .container_logo {
   position: absolute;
@@ -50,7 +52,7 @@ header {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 2em;
-  color: #000;
+  color: #FFF;
   z-index: 3; }
 
 .logo_nasa {
@@ -70,7 +72,6 @@ header {
   margin-top: 1em; }
 
 .main {
-  background-image: url("");
   position: relative;
   width: 100%;
   height: 100vh;
@@ -81,107 +82,81 @@ header {
   position: absolute;
   top: 40vh; }
 
-/* HOVER IMAGE ANIMATION */
+.gradient_fade {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 80vh;
+  background: -webkit-linear-gradient(black 29%, transparent 100%);
+  background: -o-linear-gradient(black 29%, transparent 100%);
+  background: linear-gradient(black 29%, transparent 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
+  /* IE6-9 */ }
+
+.grid_link {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; }
+
+.grid {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; }
+
+.grid_content {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; }
+
 .apod_link {
-  color: #000; }
+  color: #FFF;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  padding-bottom: 10px; }
   .apod_link:hover {
-    color: #FFF; }
+    border-bottom: 2px solid #FFF; }
 
 .mars_link {
-  color: #000; }
+  color: #FFF;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  padding-bottom: 10px; }
   .mars_link:hover {
-    color: #FFF; }
+    border-bottom: 2px solid #FFF; }
 
-.ng-hide-add, .ng-hide-remove {
-  display: block !important; }
+.info_trigger {
+  position: absolute;
+  color: #FFF;
+  bottom: 10px;
+  right: 15px;
+  z-index: 15; }
 
-.fade {
-  transition: all linear 150ms;
-  opacity: 1; }
-
-.fade.ng-hide {
-  opacity: 0; }
+.info_text {
+  width: 20vw;
+  height: auto;
+  position: absolute;
+  color: #FFF;
+  bottom: 45px;
+  right: 25px;
+  z-index: 15; }
 
 .img_bg {
   position: absolute;
   z-index: 2; }
-
-/* HOVER IMAGE ANIMATION END*/
-.container-btn {
-  width: 30%;
-  position: relative;
-  margin: 0 auto;
-  text-align: center; }
-  .container-btn a {
-    font-family: "Roboto", sans-serif;
-    background-color: #000;
-    color: #FFF;
-    font-size: 1.2em;
-    text-decoration: none;
-    padding: 5px 10px 5px 10px;
-    border: 1px solid #000;
-    border-radius: 3px;
-    transition: all 0.2s ease-in-out;
-    margin-right: 3%; }
-    .container-btn a:hover {
-      opacity: 0.8; }
-  .container-btn button {
-    font-family: "Roboto", sans-serif;
-    background-color: #FFF;
-    color: #000;
-    font-size: 1.2em;
-    text-decoration: none;
-    padding: 5px 10px 5px 10px;
-    border: 1px solid #000;
-    border-radius: 3px;
-    transition: all 0.2s ease-in-out;
-    outline: none; }
-    .container-btn button:hover {
-      opacity: 0.8; }
-
-.grid {
-  padding-top: 30vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 30vh; }
-
-.img_grid_spe {
-  display: block; }
-
-.img_grid_container {
-  position: relative;
-  display: inline-block;
-  width: 40%;
-  height: auto; }
-
-.text_info_global {
-  z-index: 10;
-  position: absolute;
-  top: 50px;
-  left: 20px;
-  color: #000; }
-
-.text_img_grid {
-  z-index: 10;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: #FFF; }
-
-.img_grid {
-  width: 100%;
-  z-index: 2;
-  margin: 0px;
-  margin-bottom: -5px;
-  display: inline-block; }
-
-.modal {
-  position: fixed;
-  z-index: 10;
-  width: 100%;
-  height: 100vh;
-  background-color: #FFF;
-  text-align: center;
-  opacity: 1; }
