@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>mars_rover_report</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
+    <link href="app/css/mars_style.min.css" rel="stylesheet" />
+    <link href="app/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app/js/angular-datepicker.js"></script>
+    <!-- Modules -->
+    <script src="app/js/app_mars.js"></script>
+    <!-- Controllers -->
+    <script src="app/js/controllers/marsContent.js"></script>
+</head>
+
+<body ng-app="appMars">
+    <div class="main" ng-controller="marsContent" id="top">
+        <div class="container_logo">mars_rover_report {{date}}</div>
+        <p ng-hide="modal" class="text_info_global"><b>{{rover}}</b> / <b>SOL</b> : {{sol}}
+            <br> <b>status</b> : {{status}}
+            <br> <b>landing_date</b> : {{landingDate}}
+            <br> <b>launch_date</b> : {{launchDate}}
+            <br> <b>total_photos</b> : {{total_photos}}
+            <br> <b>today_photos</b> : {{today_photos}}</p>
+        <a href="#top">
+            <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
+        </a>
+        <div class="grid">
+            <div ng-show="modal" class="modal">
+                <h1>{{error}}</h1>
+                <h3>{{errordesc}}</h3>
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}}
+                    <br> status : {{status}}
+                    <br> id : {{id1}}</p>
+                <img src="{{photo1}}" class="img_grid" />
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}}
+                    <br> status : {{status}}
+                    <br> id : {{id2}}</p>
+                <img src="{{photo2}}" class="img_grid" />
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}}
+                    <br> status : {{status}}
+                    <br> id : {{id3}}</p>
+                <img src="{{photo3}}" class="img_grid" />
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}}
+                    <br> status : {{status}}
+                    <br> id : {{id4}}</p>
+                <img src="{{photo4}}" class="img_grid" />
+            </div>
+            <h1 id="choice" class="mt-3">Want to see all the pictures taken yesterday by {{rover}} ?</h1>
+            <h3>There's a total of {{today_photos}} photos today, it might take some time to load.</h3>
+            <div class="container-btn">
+                <a href="" ng-click="showme=true">Show</a>
+                <button ng-show="showme" ng-click="showme=false">Hide</button>
+            </div>
+            <img ng-show="showme" ng-repeat="img_src in url" src={{img_src.img_src}} class="img_grid_spe mt-3" />
+        </div>
+    </div>
+</body>
+
+</html>
