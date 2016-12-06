@@ -2,12 +2,14 @@
 <html>
 
 <head>
-    <title>mars_rover_report</title>
+    <title>nasa_api_exploration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
-    <link href="app/css/style.min.css" rel="stylesheet" />
+    <link href="app/css/style.min.css" rel="stylesheet"/>
+    <!-- node_modules -->
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-animate/angular-animate.min.js"></script>
-
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
     <!-- Modules -->
     <script src="app/js/app.js"></script>
     <!-- Controllers -->
@@ -38,9 +40,10 @@
             <div class="grid_content">    
                 <img src="app/img/mars.jpg"/>
             </div>
-        </div>
-        <p ng-mouseenter="info = true" ng-mouseleave="info = false" class="info_trigger">More infos</p>
+            <p ng-mouseenter="info = true" ng-mouseleave="info = false" class="info_trigger">More infos</p>
         <p class="info_text" ng-show="info">This project is an exploration of NASA's different API. It's also alearning exercice to try and learn on how to use an API and to extract the data.</p>
+        </div>
+        
     </div>
 </body>
 
